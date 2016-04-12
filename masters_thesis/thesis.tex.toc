@@ -1,0 +1,10 @@
+\contentsline {chapter}{Acknowledgements}{1}
+\contentsline {chapter}{\numberline {1}Synopsis}{2}
+\contentsline {chapter}{\numberline {2}Literature survey and importance of dendritic solidification}{4}
+\contentsline {chapter}{\numberline {3}A Phase field model for solidification}{5}
+\contentsline {section}{\numberline {3.1}Modelling alloy Solidification}{5}
+\contentsline {chapter}{\numberline {4}Equations}{9}
+\contentsline {section}{\numberline {4.1}Fluid Flow}{10}
+\contentsline {chapter}{\numberline {5}Descretisation and Numerical Methods}{11}
+\contentsline {chapter}{\numberline {6}Results and Discussion}{12}
+\contentsline {chapter}{\numberline {7}Conclusion}{13}

@@ -1,0 +1,429 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ref.: Michael G. Selzer, PACE3D styles and environments
+%
+%  This file contains all default packages of the pace3d project
+%  DO NOT CHANGE THIS FILE. This file is _the_ standard
+%  15.07.2011
+%  Marco Berghoff
+%  Mathias Reichardt
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\message{*** PACE3D - Styles and Environments Vers. 0.1, 02-April-2008, Selzer, PACE3D}
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pace3d}[2011/07/15 PACE3D style package collection]
+% bool expressions in .sty files
+\RequirePackage{etoolbox}
+\RequirePackage{ifpdf}
+
+%Options
+\newbool{PACEnofont}%
+\setbool{PACEnofont}{false}%
+\newbool{PACEdevelop}%
+\setbool{PACEdevelop}{false}%
+\newbool{PACEbeamer}%
+\setbool{PACEbeamer}{false}%
+\newbool{PACEownbibsty}%
+\setbool{PACEownbibsty}{false}%
+\newbool{PACEprintbook}%
+\setbool{PACEprintbook}{false}%
+\newbool{PACEposter}%
+\setbool{PACEposter}{false}%
+
+\DeclareOption{develop}{\setbool{PACEdevelop}{true}}
+\DeclareOption{nofont}{\setbool{PACEnofont}{true}}
+\DeclareOption{beamer}{\setbool{PACEbeamer}{true}}
+\DeclareOption{poster}{\setbool{PACEposter}{true}}
+\DeclareOption{ownbibsty}{\setbool{PACEownbibsty}{true}}
+\DeclareOption{printbook}{\setbool{PACEprintbook}{true}}
+\ProcessOptions\relax
+
+%Load non standard packages only if the file exist.
+\newcommand{\LoadIfExists}[2][]{
+\IfFileExists{#2.sty}{
+  \RequirePackage[#1]{#2}
+}{
+  \PackageWarningNoLine{pace3d}{The package '#1' is not available, please install it to be fully compatible to the pace3d-collection}
+}
+}
+\makeatletter
+%Check if a package is loaded
+\providecommand{\IfPackageLoaded}[2]{\@ifpackageloaded{#1}{#2}{}}
+\makeatother
+
+% direct input of unicode chars
+\RequirePackage[utf8]{inputenc}
+% create searchable PDF files
+\LoadIfExists{cmap}
+\RequirePackage[T1]{fontenc}
+
+% % Times for rm and math | Helvetica for ss | Courier for tt
+% \RequirePackage{mathptmx} % rm & math
+% \ifPACEbeamer\else
+% \RequirePackage[scaled=0.90]{helvet} % ss
+% \fi
+% \RequirePackage{courier} % tt
+% % \RequirePackage{bm} % boldmath
+% \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n} %cal from computer modern and not the mathscr font
+% \normalfont
+\notbool{PACEnofont}{
+  \ifbool{PACEbeamer}{
+    % Beamer has a times font as default
+    \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n} %cal from computer modern and not the mathscr font
+  }{
+    % default font for documents latine modern, replacement for computer modern
+    \LoadIfExists{lmodern}
+  }
+  %interface to pdfTeX’s micro-typographic extensions: character protrusion and font expansion.
+  \LoadIfExists{microtype}
+}{}
+% Neue deutsche Silbentrennung und in Folge deutsche Begriffe wie Inhaltsverzeichnis (wenn german als Sprache gewählt ist)
+\RequirePackage{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Satzspiegel for 170 mm x 240 mm for printing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifbool{PACEprintbook}{
+  \RequirePackage{typearea}
+  \setlength{\paperwidth}{170mm}
+  \setlength{\paperheight}{240mm}
+  \typearea[8mm]{14} %8mm BCOR, DIV14
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% structure commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Internal Commands: ----------------------------------------------
+% use for natbib because it loads an \chapter even in scrartcl.cls
+\makeatletter
+%
+\newbool{chapteravailable}%
+\setbool{chapteravailable}{false}%
+
+\ifcsname chapter\endcsname
+  \setbool{chapteravailable}{true}%
+\else
+  \setbool{chapteravailable}{false}%
+\fi
+\providecommand{\IfChapterDefined}[1]{\ifthenelse{\boolean{chapteravailable}}{#1}{}}%
+\providecommand{\IfElseChapterDefined}[2]{\ifthenelse{\boolean{chapteravailable}}{#1}{#2}}%
+\providecommand{\IfDefined}[3]{%
+\ifcsname #1\endcsname
+   #2 %
+\else
+   #3 %
+\fi
+}
+
+% Definde frontmatter, mainmatter and backmatter if not defined
+\@ifundefined{frontmatter}{%
+   \newcommand{\frontmatter}{%
+      %In Roemischen Buchstaben nummerieren (i, ii, iii)
+      \pagenumbering{roman}
+   }
+}{}
+\@ifundefined{mainmatter}{%
+   % scrpage2 benoetigt den folgenden switch
+   % wenn \mainmatter definiert ist.
+   \newif\if@mainmatter\@mainmattertrue
+   \newcommand{\mainmatter}{%
+      % -- Seitennummerierung auf Arabische Zahlen zuruecksetzen (1,2,3)
+      \pagenumbering{arabic}%
+      \setcounter{page}{1}%
+   }
+}{}
+\@ifundefined{backmatter}{%
+   \newcommand{\backmatter}{
+      %In Roemischen Buchstaben nummerieren (i, ii, iii)
+      \pagenumbering{roman}
+   }
+}{}
+\makeatother
+
+\newcommand{\pacechapter}[1]{
+\IfElseChapterDefined
+  {\chapter{#1}\minitoc}
+	{\title{#1}\author{Excerpt from the PACE3D book}\maketitle\tableofcontents}
+}%\huge Pace3d book:\\#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% math
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LoadIfExists{amsmath}
+\LoadIfExists{amssymb}
+
+% allow linebreaks in equations
+% many good things
+\LoadIfExists[fixamsmath,disallowspaces,mathic]{mathtools}
+\IfPackageLoaded{mathtools}{
+  \mathtoolsset{
+    showonlyrefs,         % only show equation number if referenced
+    showmanualtags=true,  % show some lables anyway
+    multlined-pos=t
+  }
+}
+
+% use pretty chars for real numbers, natural numbers ...
+\LoadIfExists{dsfont}
+
+% nice units
+\LoadIfExists{units}
+
+\notbool{PACEbeamer}{
+  \LoadIfExists{amsthm}
+  \IfPackageLoaded{amsthm}{
+    % own theorem enviroment
+    \newtheoremstyle{note}% name
+    {\topsep}%    Space above
+    {\topsep}%    Space below
+    {}%           Body font
+    {}%           Indent amount
+    {\bfseries}%  Theorem head font
+    {.}%          Punctuation after theorem head
+    { }%          Space after theorem headi
+    { }%          Theorem head spec (can be left empty, meaning `normal')
+    %{\thmnumber{#2 }\thmname{#1}\thmnote{\bfseries{ (#3)}}} % thmnote fett, dann swapnumbers aus
+    % use this tyle
+    \theoremstyle{note}
+
+    %\swapnumbers
+    \ifchapteravailable
+      \newtheorem{theorem}{Theorem}[chapter] %en
+    \else
+      \newtheorem{theorem}{Theorem}[section]
+    \fi
+    \newtheorem{satz}[theorem]{Satz} %de
+    \newtheorem{lemma}[theorem]{Lemma} %en de
+    \newtheorem{hilfssatz}[theorem]{Hilfssatz} %de
+    \newtheorem{definition}[theorem]{Definition} %en de
+    \newtheorem{proposition}[theorem]{Proposition} %en de
+    \newtheorem{corollary}[theorem]{Corollary} %en
+    \newtheorem{korollar}[theorem]{Koraollar} %de
+    \newtheorem{remark}[theorem]{Remark} %en
+    \newtheorem{bemerkung}[theorem]{Bemerkung} %de
+    \newtheorem{exampletheorem}[theorem]{Example} %en
+    \newtheorem{beispiel}[theorem]{Beispiel} %de
+  }
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text formating:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%surpresses (inf) widows and orphans,
+% % (single lines of a paragraph) including after math lines
+% \clubpenalty         = 10000
+% \widowpenalty        = 10000
+% \displaywidowpenalty = 10000
+\notbool{PACEbeamer}{
+  \notbool{PACEposter}{
+    \allowdisplaybreaks[1]
+    % head, foots
+%     \RequirePackage[%
+%       automark,         % automatische Aktualisierung der Kolumnentitel
+%       nouppercase,      % Grossbuchstaben verhindern
+%       %markuppercase    % Grossbuchstaben erzwingen
+%       %markusedcase     % vordefinierten Stil beibehalten
+%       komastyle,        % Stil von Koma Script
+%       %standardstyle,   % Stil der Standardklassen
+%     ]{scrpage2}
+    \pagestyle{scrheadings}
+    \ohead{\pagemark}
+    \ihead{\headmark}
+    \chead{}
+    \ofoot{}
+    \ifoot{}
+    \cfoot{}
+
+    %Set the in-page-title pagestyle to empty
+    \renewcommand*{\titlepagestyle}{empty}
+
+    %Set part and chpater pagestyle to empty: without head
+    \ifx\partpagestyle\renewcommand*{\partpagestyle}{empty}\fi
+    \IfChapterDefined{\renewcommand*{\chapterpagestyle}{empty}}
+
+    % allow landscapes
+    \LoadIfExists{lscape}
+    \LoadIfExists{pdflscape}
+
+    % formating of captions
+    \RequirePackage[small,bf]{caption}
+  }{}
+
+  % 1.5 spacing for rows
+  \LoadIfExists{setspace}
+
+  % extra options for enumerate enviroment
+  \LoadIfExists{enumitem}
+}{}
+
+% allow tables with more than one page
+\LoadIfExists{longtable}
+
+% allow multicolom text
+\LoadIfExists{multicol}
+
+% allow multirow in tables
+\LoadIfExists{multirow}
+
+% more beautiful bibliography
+\RequirePackage[numbers]{natbib}
+\ifPACEownbibsty \else \bibliographystyle{AlphaFirstName} \fi
+
+% nice icons for keys
+\LoadIfExists{keystroke}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LoadIfExists{xcolor}
+\IfPackageLoaded{xcolor}{
+\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+\definecolor{MiddleGray}{rgb}{0.6,0.6,0.6}
+\definecolor{orange}{rgb}{1.0,0.7,0.0}
+\definecolor{CommentGreen}{rgb}{0.0,0.70,0.0}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% graphics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{graphicx}
+
+\LoadIfExists{wrapfig}
+
+% easy to add 2 figures in one figure enviroment
+\notbool{PACEposter}{
+  %\RequirePackage{subfigure}
+  \LoadIfExists{subfig}
+  \IfPackageLoaded{subfig}{
+    %Backward Compatibility
+    \def\subfigure{\subfloat}
+    \gpreto\subfigure{\PackageWarning{pace3d}{The command \protect\subfigure\space is obsolete please use \protect\subfloat\space instead}}
+  }
+}{}
+
+% drawing direct in latex via PGF, tikz is only a frontend
+\LoadIfExists{tikz}
+\IfPackageLoaded{tikz}{
+  \LoadIfExists{tikz-3dplot}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% listings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LoadIfExists{listings}
+\IfPackageLoaded{listings}{
+  \lstdefinelanguage{XTERM}%
+    {morekeywords={},%
+      sensitive=false,%
+      morecomment=[l]!%
+    }[keywords, comments]%
+
+  \lstdefinelanguage{EBNF}%
+    {morekeywords={INTEGER, STRING, FLOAT},%
+      sensitive=true,%
+      morecomment=[n]{(*}{*)},
+      string=[d]{"}
+    }[keywords, comments]%
+
+  \lstset{
+    basicstyle=\ttfamily\footnotesize, % print whole listing small and typewriter
+    keywordstyle=\color{blue}\bfseries,%
+    identifierstyle=,                  % nothing happens
+    commentstyle=\color{CommentGreen}, % CommentGreen comments
+    stringstyle=\color{red}\ttfamily,  % strings in red
+    stringstyle=\ttfamily,             % typewriter type for strings
+    showstringspaces=false,            % no special string spaces
+    keepspaces=true,                   % make it copyable
+    columns=flexible,                  %
+    numbers=left,                      % line numbers
+    stepnumber=1,                      %
+    numberstyle=\tiny,                 %
+    numbersep=5pt,                     %
+    frame=single,                      %
+    breaklines=true,                   % break lines if too long
+    breakautoindent= true              % make break pretty
+    }
+
+  \lstset{literate=% Allow Umlaute in listing
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}2
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+  }
+}
+
+\notbool{PACEposter}{
+  \LoadIfExists{algorithmic}
+  \LoadIfExists[lined]{algorithm}
+  \IfPackageLoaded{algorithm}{
+    \ifchapteravailable
+      \numberwithin{algorithm}{chapter}
+    \else
+      \numberwithin{algorithm}{section}
+    \fi
+
+    \addto\captionsngerman{\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}} % german name
+    \addto\captionsenglish{\renewcommand{\listalgorithmname}{List of Algorithms}} % german name
+    \addto\captionsngerman{\floatname{algorithm}{Algorithmus}}
+    \addto\captionsenglish{\floatname{algorithm}{Algorithm}}
+
+    \renewcommand{\algorithmicrequire}{\textbf{\makebox[\widthof{Output:}][l]{Input:}}}
+    \renewcommand{\algorithmicensure}{\textbf{Output:}}
+    \newcommand{\theHalgorithm}{\arabic{algorithm}} %Let it worked with hyperref
+  }
+
+  \LoadIfExists[colorinlistoftodos,\ifPACEdevelop \else disable, \fi]{todonotes}
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% allow links in a pdf document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\notbool{PACEbeamer}{
+  \notbool{PACEposter}{
+    \RequirePackage[colorlinks=true,
+                    linkcolor=blue,
+                    citecolor=blue,
+                    filecolor=blue,
+                    \ifPACEdevelop pagebackref, \fi
+                    urlcolor=blue]{hyperref}
+    \LoadIfExists[all]{hypcap}
+    \LoadIfExists{hypernat} %not available in MikTeX
+  }{}
+  \ifbool{PACEdevelop}{
+    \setlength{\overfullrule}{5pt}
+    \LoadIfExists{showkeys}
+  }{}
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% add small toc at start of every chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the book style itselfe defines \part so this might lead to errors
+% nohints turn this off
+\notbool{PACEbeamer}{
+  \notbool{PACEposter}{
+    \LoadIfExists[tight,
+                  nohints]{minitoc}
+    \IfPackageLoaded{minitox}{
+      \IfChapterDefined{\setcounter{minitocdepth}{2}}
+      \IfChapterDefined{\setcounter{parttocdepth}{0}}
+      \mtcselectlanguage{english2}
+
+      % \mtcsetfeature{part}
+      \mtcsetfeature{parttoc}{before}{}
+      \mtcsetfeature{parttoc}{after}{\clearpage}
+      % \mtcselectlanguage{germanb}
+    }
+  }{}
+
+  % additional formating, no packages contained
+  \RequirePackage{pace3d-gimmicks}
+}{}
+
+\RequirePackage{pace3d-abbreviations}

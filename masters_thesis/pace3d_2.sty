@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ref.: Michael G. Selzer, PACE3D styles and environments
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\message{*** PACE3D - Styles and Environments Vers. 0.1, 02-April-2008, Selzer, PACE3D}
+
+\newsavebox{\hintbox}
+
+\newenvironment{hint}{
+  \begin{lrbox}{\hintbox}
+    \begin{minipage}{\linewidth}
+      {\vspace{5mm}\rule{\textwidth}{0.3mm}\\[2mm]
+\begin{minipage}[c]{7mm}
+    \includegraphics[width=\textwidth]{icon-exclamation_mark}
+\end{minipage}
+\begin{minipage}[c]{.45\textwidth}
+    \bfseries\itshape ~ \iflanguage{english}{HINT}{HINWEIS}
+\end{minipage}%
+       }\begin{quote}\ignorespaces}
+{\end{quote}\vspace*{-2mm}\rule{\textwidth}{0.3mm}\end{minipage}\end{lrbox}
+   \par\noindent
+\usebox{\hintbox}
+\vspace{5mm} \par}
+
+\newsavebox{\tipbox}
+
+\newenvironment{tip}{
+  \begin{lrbox}{\tipbox}
+    \begin{minipage}{\linewidth}
+      {\vspace{5mm}\rule{\textwidth}{0.3mm}\\[2mm]
+\begin{minipage}[c]{7mm}
+    \includegraphics[width=\textwidth]{icon-tip}
+\end{minipage}
+\begin{minipage}[c]{.45\textwidth}
+    \bfseries\itshape ~\iflanguage{english}{TIP}{TIPP}
+\end{minipage}%
+       }\begin{quote}\ignorespaces}
+{\end{quote}\vspace*{-2mm}\rule{\textwidth}{0.3mm}\end{minipage}\end{lrbox}
+   \par\noindent
+\usebox{\tipbox}
+\vspace{5mm} \par}
+
+\newsavebox{\warningbox}
+
+\newenvironment{warning}{
+  \begin{lrbox}{\warningbox}
+    \begin{minipage}{\linewidth}
+      {\vspace{5mm}\rule{\textwidth}{0.3mm}\\[2mm]
+\begin{minipage}[c]{7mm}
+    \includegraphics[width=\textwidth]{icon-biohazard}
+\end{minipage}
+\begin{minipage}[c]{.45\textwidth}
+    \bfseries\itshape ~\iflanguage{english}{WARNING}{WARNUNG}
+\end{minipage}%
+       }\begin{quote}\ignorespaces}
+{\end{quote}\vspace*{-2mm}\rule{\textwidth}{0.3mm}\end{minipage}\end{lrbox}
+   \par\noindent
+\usebox{\warningbox}
+\vspace{5mm} \par}
+
+\newsavebox{\examplebox}
+
+\newenvironment{example}{
+  \begin{lrbox}{\examplebox}
+    \begin{minipage}{\linewidth}
+      {\vspace{5mm}\rule{\textwidth}{0.3mm}\\[2mm]
+\begin{minipage}[c]{6mm}
+   \includegraphics[width=\textwidth]{icon-example}
+\end{minipage}
+\begin{minipage}[c]{.45\textwidth}
+    \bfseries\itshape ~\iflanguage{english}{EXAMPLE}{BEISPIEL}
+\end{minipage}%
+       }\begin{quote}\ignorespaces}
+{\end{quote}\vspace*{-2mm}\rule{\textwidth}{0.3mm}\end{minipage}\end{lrbox}
+   \par\noindent
+\usebox{\examplebox}
+\vspace{5mm} \par}

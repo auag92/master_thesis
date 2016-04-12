@@ -1,0 +1,69 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+%opening
+\title{Assignment01: Modeling and simulation methods in materials science (MT218)}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{Numerical methods}
+\begin{itemize}
+ \item Using the taylor series expansion work out an fourth order accurate in 
+ space operator for $\dfrac{\partial ^{2}}{\partial x^{2}}$.
+ \item Utilizing this solve the simple diffusion equation in an \textit{explicit manner}:
+ $\dfrac{\partial c}{\partial t} = D\dfrac{\partial^{2}c}{\partial x^{2}}$
+ \item How many boundary points would you require in this discretization?
+ \item Compare the solutions as functions of time with discretization used 
+ in class that was second order accurate in space.
+ \item Write down the system of equations that you would require to solve in 
+ a \textit{implicit} discretization.
+ \item Solve the system of equations using a Jacobi/Gauss-siedel methods
+ \item Again compare the solutions against those obtained with the explicit/implicit
+ discretizations which are second order accurate.
+ \item Can you think of a scheme of discretization which is second order accurate
+ in space and time? Will the memory usage of this scheme be higher/lower compared
+ to a simple Euler scheme?
+\end{itemize}
+
+\section{Cahn-Hilliard equation}
+\begin{itemize}
+ \item In the example discussed in class, can you work out the evolution for
+ the different sinusoidal modes as a function of time. Do all modes grow similarly?
+ \item Construct a different symmetric function and work out the equilibrium 
+ profiles both numerically and analytically and compare them as was performed in the 
+ class? What is the least order of the function that would give you phase separation?
+ \item In the equations discussed in class, if the mobility (M) were a function of
+ composition, how would you modify the discretization?
+ \item Using this impose variable mobilities in the phases(different compositions)
+ and see how the evolution of the compositions change with respect to equal 
+ mobilities
+ \item Add a temperature dependent term ($T-T_M$)*f(c), to the free-energy $c^{2}\left(1-c^{2}\right)$ 
+ in order to tilt the wells energetically. Does a linear function $f(c)$ modify the equilibrium points 
+ at all? Construct higher order functions which perform this tilting function.
+ \item How do you find the equilibrium compositions of the two phases at
+ a given temperature?
+ \item If you were to initialize the compositions of the phases corresponding to 
+ $T-T_M =0$, and then change the temperature to lower and higher values, what 
+ happens with respect to the motion of the interface?
+ \item Is there a limit, beyond which the system becomes unstable to phase 
+ separation? Numerically evaluate this limit. Can you compute it also 
+ analytically?
+ \item Perform simulations at different temperatures
+ \item Can you device a scheme for measuring the velocities at the interface?
+ \item Plot the variation of the velocities for different values of the temperature.
+ \item Try an extension of the formulation to two dimensions. Impose perturbations 
+ on the system and see whether you get some interesting looking patterns.
+ \item If you were to extend the formulation to having three components how many additional 
+ equations will you need to solve. Can you hypothetically think of extending the formulation of 
+ $c^{2}\left(1-c^{2}\right)$ to $c_A^{2}\left(1-c_A^{2}\right) + c_B^{2}\left(1-c_B^{2}\right) + 
+ c_C^{2}\left(1-c_C^{2}\right)$,
+ A,B,C being the components. Plot the function and make a decision. 
+\end{itemize}
+
+
+
+\end{document}

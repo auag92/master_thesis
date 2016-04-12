@@ -1,0 +1,34 @@
+% This file contains some gimmicks allowing nice boxes
+% 03.09.2010
+% Michael G. Selzer
+% Marco Berghoff
+% Mathias Reichardt
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pace3d-gimmicks}[2010/09/21 PACE3D gimmicks]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Boxes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newsavebox{\boxsave}
+\newcommand{\BoxStarting}[2]{
+  \begin{lrbox}{\boxsave}
+    \begin{minipage}{\linewidth}
+      {\vspace{5mm}\rule{\textwidth}{0.3mm}\\[2mm]
+\begin{minipage}[c]{7mm}
+    \includegraphics[width=\textwidth]{#1}
+\end{minipage}
+\begin{minipage}[c]{.45\textwidth}
+    \bfseries\itshape ~ \MakeUppercase{#2}
+\end{minipage}%
+      }\begin{quote}\ignorespaces}
+\newcommand{\BoxEnding}{%
+\end{quote}\vspace*{-2mm}\rule{\textwidth}{0.3mm}\end{minipage}\end{lrbox}
+   \par\noindent
+\usebox{\boxsave}
+\vspace{5mm}\par}
+
+\newenvironment{hint}{\BoxStarting{images/icon-exclamation_mark}{\iflanguage{english}{hint}{Hinweis}}}{\BoxEnding}
+\newenvironment{tip}{\BoxStarting{images/icon-tip}{\iflanguage{english}{tip}{Tipp}}}{\BoxEnding}
+\newenvironment{warning}{\BoxStarting{images/icon-biohazard}{\iflanguage{english}{warning}{Warnung}}}{\BoxEnding}
+ \newenvironment{example}{\BoxStarting{images/icon-example}{\iflanguage{english}{example}{Beispiel}}}{\BoxEnding}

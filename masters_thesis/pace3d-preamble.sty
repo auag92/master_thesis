@@ -1,0 +1,81 @@
+%Erlaubt die direkte Eingabe von z.B. Umlauten
+\usepackage[utf8]{inputenc}
+
+%Fussnote
+\usepackage{footmisc}
+
+%F"ur Bilder
+\usepackage{graphicx}
+
+%Wird f"ur den Zeilenabstand ben"otigt
+\usepackage{setspace}
+
+%vermeidet einzelne, herrenlose Zeilen (Hurenkinder und Schusterjungen)
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+%definiert die Seitenr"ander
+\usepackage[paper=a4paper,left=30mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+
+%wie weit sollen paragraphen einger"uckt werden
+\parindent 0pt
+
+%Bis zu welcher Gliederungsebene soll nummeriert werden
+\setcounter{secnumdepth}{3}
+
+%Pace3D styles
+\usepackage{pace3d}
+
+%Welche Ebenen sollen ins Inhaltsverzeichnis
+\setcounter{tocdepth}{3}
+
+%Mathematische Symbole
+\usepackage{amsmath}
+
+%F"ur hyperlinks im Dokument
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=PACE3D Project}
+
+%Konvertieren von Bildern 'on the fly'
+%\usepackage{ifpdf}
+%\ifpdf
+% nothing to be done here
+%\else
+%   \DeclareGraphicsExtensions{.gif, .ps, .eps, .png, .jpg, .jpeg}
+%   \DeclareGraphicsRule{.pz}{eps}{.bb}{}%
+%   \DeclareGraphicsRule{.eps.Z}{eps}{.eps.bb}{}%
+%   \DeclareGraphicsRule{.ps.Z}{eps}{.ps.bb}{}%
+%   \DeclareGraphicsRule{.ps.gz}{eps}{.ps.bb}{}%
+   % changed or new graphic rules
+%   \DeclareGraphicsRule{.eps.zip}{eps}{.eps.bb}{`unzip -p #1}%   zipped EPS 
+%   \DeclareGraphicsRule{.eps.gz}{eps}{.eps.bb}{`gunzip -p #1}%   zipped EPS
+%   \DeclareGraphicsRule{.jpg}{eps}{}{`convert #1 eps:-}%         JPEG
+%   \DeclareGraphicsRule{.jpeg}{eps}{}{`convert #1 eps:-}%         JPEG
+%   \DeclareGraphicsRule{.gif}{eps}{.bb}{`convert #1 eps:-}%      GIF
+%   \DeclareGraphicsRule{.png}{eps}{}{`convert #1 eps2:-}%      PNG
+%   \DeclareGraphicsRule{.tif}{eps}{.bb}{`convert #1 eps:-}%      TIFF
+%   \DeclareGraphicsRule{.pdf}{eps}{.bb}{`convert #1 eps:-}%      PDF-graphics
+%   \DeclareGraphicsRule{*}{eps}{.bb}{`echo generating #1 && convert #1.* eps:-}%      default
+%\let\oldIncludegraphics\includegraphics % save original snapshot
+%\renewcommand\includegraphics[2][]{% "overload" command
+%   \message{FILENAME: #2}
+%
+%   % create .bb file - not really needed
+%   \immediate\write18{ebb #2.*}
+%
+%   % get eps filename based on png filename.
+%   % better to do it directly in Latex, than invoking system calls and reading files
+%   % get substring: "picture.png" -> "picture" as \plainfilename
+%   \def\temp ##1{%
+%      \def\plainfilename{##1}% "picture"
+%      \def\epsfilename{##1.eps}}% "picture.eps"
+%   \expandafter\temp#2 % this prepares both plainfilename and epsfilename
+%
+%   % convert image to eps
+%   \immediate\write18{test ! -e #2.eps && convert #2.* #2.eps}% create .eps file
+%
+%   \message{EPSNAME: #2.eps }
+%   \oldIncludegraphics[#1]{#2}% \plainfilename instead of #2
+%}
+%\fi

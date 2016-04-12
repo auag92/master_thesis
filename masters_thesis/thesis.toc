@@ -1,0 +1,11 @@
+\contentsline {chapter}{Acknowledgements}{1}
+\contentsline {chapter}{\numberline {1}Synopsis}{2}
+\contentsline {chapter}{\numberline {2}An introduction to Dendritic Solidification}{4}
+\contentsline {chapter}{\numberline {3}A Phase Field Model for Solidification}{5}
+\contentsline {section}{\numberline {3.1}The Phase Field Method}{5}
+\contentsline {section}{\numberline {3.2}The Allen-Cahn Equation}{5}
+\contentsline {section}{\numberline {3.3}Modelling Alloy Solidification}{7}
+\contentsline {chapter}{\numberline {4}The Equations}{10}
+\contentsline {section}{\numberline {4.1}The phasefield equations}{10}
+\contentsline {section}{\numberline {4.2}Incorporating Anisotropy}{11}
+\contentsline {section}{\numberline {4.3}Fluid Flow}{13}

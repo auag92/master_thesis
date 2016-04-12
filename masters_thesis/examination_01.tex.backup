@@ -1,0 +1,83 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+% \usepackage{amsmath}
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+%opening
+\title{Examination: Modeling and simulation methods in materials science (MT218)}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{Numerical methods}
+\begin{itemize}
+ \item Using the taylor series expansion work out an fourth order accurate in 
+ space operator for $\dfrac{\partial ^{2}}{\partial x^{2}}$.
+ \item For the classical diffusion equation, $\dfrac{\partial c}{\partial t} = D\dfrac{\partial ^{2}}{\partial x^{2}}$,
+ write down how one would implement the periodic and no-flux boundary conditions in the explicit
+ finite difference setting.
+ \item In a small sketch highlight what would be the "actual boundary" where the boundary condition is applied.
+\end{itemize}
+
+\begin{itemize}
+ \item For the Allen-Cahn equation $\dfrac{\partial \eta}{\partial t} 
+ = M\left(2\kappa \dfrac{\partial^{2}\eta}{\partial x^{2}} - \dfrac{\partial f}{\partial \eta}\right)$, write down
+ the set of equations that you would derive for an implicit finite difference discretization for a 1*4 setting
+ using the three-point stencil for the laplacian
+ \item Work out the solution to this matrix, using the Thomas-Algorithm, with Dirichlet boundary conditions 
+ for one time-iteration update.
+\end{itemize}
+
+\section{Cahn-Hilliard model}
+\begin{itemize}
+ \item For an equilibrium interface profile of a binary alloy, for the Cahn-Hilliard model discussed in class
+ draw the following, a) the composition profile(mention the solution), b) ($\dfrac{\partial f}{\partial c}$),
+ c) $f-\left(\dfrac{\partial f}{\partial c} - 2\kappa \nabla^{2}c\right)$, d) $(\dfrac{\partial f}{\partial c} - 2\kappa \nabla^{2}c\right)$.
+ \item Write the equi-partition relation which gives the partial differential equation for the equilibrium interface.
+ \item For the free-energy density of the form $f(c)=c^{2}\left(1-c^{2}\right)$, in terms of $\kappa$ write down the surface energy.
+\end{itemize}
+
+\begin{itemize}
+ \item If i were to tilt the free-enery wells of the function $f\left(c\right)=c^{2}\left(1-c^{2}\right)$ by a function
+ $L\dfrac{\left(T-T_m\right)}{T_m}c$, will it cause the system to go out of equilibrium? Justify your answer.
+ \item Assume, an appropriate tilting function, and compute how the region of compositions between which there
+ is a immiscibility, changes as a function of temperature.
+\end{itemize}
+
+\section{Allen-Cahn model}
+\begin{itemize}
+ \item In the Allen-Cahn model discussed in class, prove that the value of the functional decreases montonically in time, using
+ the evolution equation derived for the order parameter. Is it possible to model nucleation using such a deterministic evolution equation?
+ \item If we were to choose a potential of the form $f\left(\eta\right)=\eta\left(1-\eta\right)$, in terms of $\kappa$, what would
+ be the expression that derives you the surface energy. Is there something that needs to be done in "addition" to have stable evolution of
+ the interface, given that there is no minima at $\eta=1$ and $\eta=0$.
+ \item How does the condition of equilibrium differ from that of the Cahn-Hilliard equation?
+\end{itemize}
+
+\section{Phase-transformation:pure material solidification}
+
+\begin{itemize}
+ \item Draw the steady-state temperature profile across a 1D solid-liquid interface. What is Local thermodynamic equilibrium, 
+ what does it imply with respect to the interface temperature. 
+ \item Write down the evolution equation for the temperature field, and mark the source term and the diffusive flux.
+ \item Expand the free energy of the solid and liquid until second order in temperature, and derive the driving force for
+ solidification. Correspondingly derive the modified equation for temperature evolution. 
+\end{itemize}
+
+\section{Phase-transformation: binary alloy}
+
+\begin{itemize}
+ \item 
+\end{itemize}
+
+
+
+
+
+
+
+
+ 
+
+\end{document}

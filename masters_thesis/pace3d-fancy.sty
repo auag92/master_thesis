@@ -1,0 +1,120 @@
+\usepackage{color}
+\definecolor{darkgray}{gray}{0.85}
+\definecolor{hellgelb}{rgb}{1.0,1.0,0.9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Farbige Boxen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Makro für eine farbige Box mit farbigem Text
+% Benutzung: \colbox{HINTERGRUNDFARBE}{SCHRIFTFARBE}{TEXT}
+% Beispiel: \colbox{black}{white}{Hallo}
+\newcommand{\colbox}[3]{\colorbox{#1}{\textcolor{#2}{#3}}}
+
+% Makro für eine farbige Box mit farbigem Rand und farbigem Text
+% Benutzung: \fcolbox{RAHMENFARBE}{HINTERGRUNDFARBE}{SCHRIFTFARBE}{TEXT}
+% Beispiel: \fcolbox{red}{black}{white}{Hallo}
+\newcommand{\fcolbox}[4]{\fcolorbox{#1}{#2}{\textcolor{#3}{#4}}}
+
+\usepackage{listings}
+
+% Listingdefinitionen
+\lstdefinestyle{StyleListingBasic}{%
+     basicstyle=\ttfamily,       % Schriftstil
+     frame=single,               % einfacher Rahmen
+     framesep=1pt,               % Abstand des Rahmens
+     framerule=0.8pt,            % Linienstaerke des Rahmens
+     rulecolor=\color{darkgray}, % Farbe der Rahmenlinie
+     breaklines=true,            % automatischen Umbruch aktivieren
+     breakindent=0pt             % Einrueckung nach Umbruch
+}
+
+\lstdefinestyle{StyleCommand}{%
+     style=StyleListingBasic,
+     backgroundcolor=\color{darkgray},  % Hintergrundfarbe
+     prebreak=\mbox{\textbackslash{}},    % \ als Umbruchzeichen
+}
+
+\lstdefinestyle{StyleListing}{%
+     style=StyleListingBasic,
+     backgroundcolor=\color{hellgelb},    % Hintergrundfarbe
+}
+
+
+% Umgebung für Befehlskästen
+% Benutzung: \begin{Befehl}[BREITE] ... \end{Befehl}
+\lstnewenvironment{Befehl}[1][1]
+{\lstset{style=StyleCommand,linewidth=#1\linewidth}}
+{}
+
+% Befehle im Fließtext
+\newcommand*{\term}[1]{%
+    \lstinline[style=StyleListingBasic,basicstyle=\ttfamily\bfseries]|#1|%
+}
+
+% Umgebung für Listings mit Zeilennummern
+% Benutzung: \begin{Listing}[BREITE] ... \end{Listing}
+\lstnewenvironment{Listing}[1][1]
+{\lstset{style=StyleListing,linewidth=#1\linewidth}}
+{}
+
+
+\definecolor{mittelblau}{rgb}{0.1,0.5,1.0}
+
+% Hauptfarbe für die Seite
+\newcommand*{\maincolor}{mittelblau}
+\newcommand*{\maintextcolor}{white}
+
+\newcommand*{\SetMainColor}[1]{\renewcommand*{\maincolor}{#1}}
+\newcommand*{\SetMainTextColor}[1]{\renewcommand*{\maintextcolor}{#1}}
+
+% Setzt die aktuell Kategorie und Farbthema
+\newcommand*{\SetKategorie}[3]{%
+    \fancyhead{}%
+    \fancyhead[L]{\PrintHeader{#1}}%
+%     \pdfbookmark[1]{#1}{#1}%
+    \SetMainColor{#2}%
+    \SetMainTextColor{#3}%
+}
+
+% Druckt die aktuelle Kopfleiste nochmal.
+\newcommand{\PrintHeader}[1]{%
+    \begin{textblock}{1}(15.25,0)%
+        \begin{sideways}%
+            \setlength{\fboxsep}{3pt}
+            \colbox{\maincolor}{\maintextcolor}{{\Huge \textsl{\textbf{#1}}}}%
+            \hspace*{1.5cm}%
+        \end{sideways}%
+    \end{textblock}%
+}
+
+\usepackage{fancyhdr}
+\usepackage[absolute]{textpos}
+\usepackage{rotating}
+
+\pagestyle{fancy}
+\fancyhead{}  %erst mal leer machen
+\fancyhead[R]{} %\rightmark} %die Section-Name
+\fancyhead[L]{\leftmark}     % Chapter-Name
+
+% \fancyhead{}
+% \fancyhead[LE]{Kategorie}
+% \fancyhead[L]{\PrintHeader{Kategorie}}
+% \fancyfoot{}
+% \fancyfoot[LE,RO]{\textbf{\textsc{\thepage}}}
+\fancyfoot[R,LO]{\textsl{PACE3D - \today}}
+% \renewcommand*{\headrulewidth}{0.0pt}
+% \renewcommand*{\footrulewidth}{0.0pt}
+
+% Makro für Monat in Fußzeile
+% \newcommand{\SetFusszeile}[1]{%
+%     \fancyfoot[RE,LO]{\textsl{SuperMAG #1}}
+%     \hypersetup{pdftitle={Pace3D #1}}
+% }
+
+\renewcommand{\maketitle}{
+%\SetKategorie{\titleline}{mittelblau}{white}
+\PrintHeader{\titleline}
+\thispagestyle{empty}
+\@maketitle
+}

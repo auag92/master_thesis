@@ -1,0 +1,52 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{Assignment01: Modeling and simulation methods in materials science (MT218)}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{Numerical methods}
+\begin{itemize}
+ \item Using the taylor series expansion work out an fourth order accurate in 
+ space operator for $\dfrac{\partial ^{2}}{\partial x^{2}}$.
+ \item Utilizing this solve the simple diffusion equation in an \textit{explicit manner}:
+ \begin{align}
+  \dfrac{\partial c}{\partial t} &= D\dfrac{\partial^{2}c}{\partial x^{2}}
+ \end{align}
+ \item How many boundary points would you require in this discretization?
+ \item Compare the solutions as functions of time with discretization used 
+ in class that was second order in space.
+ \item Write down the system of equations that you would require to solve in 
+ a \textit{implicit} discretization.
+ \item Solve the system of equations using a Jacobi/Gauss-siedel methods
+ \item Again compare the solutions against those obtained with the explicit/implicit
+ discretizations which are second order accurate.
+ \item Can you think of a scheme of discretization which is second order accurate
+ in space and time? Will the memory usage of this scheme be higher/lower compared
+ to a simple Euler scheme?
+\end{itemize}
+
+\section{Cahn-Hilliard equation}
+\begin{itemize}
+ \item In the equations discussed in class, if the mobility (M) were a function of
+ composition, how would you modify the discretization?
+ \item Using this impose variable mobilities in the phases(different compositions)
+ and see how the evolution of the compositions change with respect to equal 
+ mobilities
+ \item Add a temperature dependent term, to the free-energy $c^{2}\left(1-c^{2}\right)$ 
+ in order to tilt the wells energetically. Does a linear function modify the equilibrium points 
+ at all? Construct higher order functions which perform this tilting function.
+ \item Can you device a scheme for measuring the velocities at the interface?
+ \item Plot the variation of the velocities for different values of the temperature.
+ \item Construct a different symmetric function and work out the equilibrium 
+ profiles both numerically and analytically and compare them as was performed in the 
+ class? What is the least order of the function that would give you phase separation?
+\end{itemize}
+
+
+
+\end{document}

@@ -1,0 +1,177 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pace3d-abbreviations}[2010/09/21 PACE3D abbrevations]
+% This file contains handy math (and other) abbrevations for convenience
+% 03.09.2010
+% Marco Berghoff
+% Mathias Reichardt
+
+% switch to the pretty epsilon as default
+\let\originaleps=\epsilon
+\let\epsilon=\varepsilon
+\let\varepsilon=\originaleps
+\renewcommand{\varepsilon}{\text{\usefont{OML}{cmr}{m}{n}\symbol{15}}}
+
+% bold vector
+\newcommand{\vv}[1]{\boldsymbol{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Symbols for sets, number sets, special groups, special spaces, ...
+%%
+\newcommand{\A}{\mathds{A}}
+\newcommand{\B}{\mathds{B}}
+\newcommand{\C}{\mathds{C}}   % complex numbers
+\newcommand{\D}{\mathds{D}}
+\newcommand{\E}{\mathds{E}}
+\newcommand{\F}{\mathds{F}}
+\newcommand{\G}{\mathds{G}}
+\let\orgH=\H
+\renewcommand{\H}{\mathds{H}} % quaternions (after Hamilton)
+\newcommand{\I}{\mathds{I}}
+\newcommand{\J}{\mathds{J}}
+\newcommand{\K}{\mathds{K}}
+\let\orgL=\L
+\renewcommand{\L}{\mathds{L}}
+\newcommand{\M}{\mathds{M}}
+\newcommand{\N}{\mathds{N}}   % natural numbers
+\let\orgO=\O
+\renewcommand{\O}{\mathds{O}}
+\let\orgP=\P                  % Save pilcrow
+\renewcommand{\P}{\mathds{P}}
+\newcommand{\Q}{\mathds{Q}}   % rational numbers
+\newcommand{\R}{\mathds{R}}   % real numbers
+\let\orgS=\S
+\renewcommand{\S}{\mathds{S}}
+\newcommand{\T}{\mathds{T}}
+\newcommand{\U}{\mathds{U}}
+\newcommand{\V}{\mathds{V}}
+\newcommand{\W}{\mathds{W}}
+\newcommand{\X}{\mathds{X}}
+\newcommand{\Y}{\mathds{Y}}
+\newcommand{\Z}{\mathds{Z}}   % integer numbers
+
+\newcommand{\cR}{\overline{\R}} % closure of the reals
+\newcommand{\PR}{\mathds{PR}}   % projective space over the reals
+\newcommand{\PC}{\mathds{PC}}   % projective space over the complex numbers
+
+\newcommand{\OG}{\text{O}}      % othogonal group
+\newcommand{\SO}{\text{SO}}     % special othogonal group
+\newcommand{\so}{\mathfrak{so}} % lie algebra to the special othogonal group
+\newcommand{\EG}{\text{E}}      % Eukledian group
+\newcommand{\SE}{\text{SE}}     % special Euklidian group
+
+% functionals
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}} % Zeeman energy
+\newcommand{\calF}{\mathcal{F}} % Free energy functional
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}} % power set (set of all subsets)
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}} % Entropie functional
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{Z}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+%Fractures
+\renewcommand{\frak}[1]{\mathfrak{#1}} %short for fractures
+
+% operators
+\renewcommand{\Re}{\operatorname{Re}}   % real part
+\renewcommand{\Im}{\operatorname{Im}}   % imaginary parts
+\DeclareMathOperator{\e}{e}             % e-function
+\DeclareMathOperator{\sgn}{sgn}         % sign
+\DeclareMathOperator{\atanz}{atan_2}    % tan2
+
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Def}{Def}
+
+% differentials
+\newcommand{\diff} [1]{\mathrm{d}{#1}}           % differential in the integral
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}} % partial
+\newcommand{\pdif} [2]{\partial_{#1}\! #2}              % partial short
+\newcommand{\ddiff}[2]{\frac{\delta #1}{\delta #2}}     % function derivation
+\newcommand{\laplace}{\Delta}
+
+% brackets
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}          % absolute value like '|a|'
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}         % Norm like: '||a||'
+\providecommand{\scalar}[2]{\left\langle#1, #2\right\rangle} % scalarproduct like: '<a,b>'
+
+% put tildes on top of symbols
+\newcommand{\tC}{\tilde{C}}
+\newcommand{\tQ}{\tilde{Q}}
+\newcommand{\tR}{\tilde{R}}
+\newcommand{\teps}{\tilde{\epsilon}}
+\newcommand{\tsigma}{\tilde{\sigma}}
+\newcommand{\tmu}{\tilde{\mu}}
+
+% put bars on top of symbols
+\newcommand{\bmu}{\bar{\mu}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Symbols related to phase-field modelling
+%%
+\newcommand{\Vphi}{\vv{\phi}}% phase-field vector (order parameter)
+\newcommand{\phia}{\phi_{\alpha}}% phase field phi_alpha
+\newcommand{\phib}{\phi_{\beta}}% phase field phi_beta
+\newcommand{\vphi}{\vec{\phi}}
+\newcommand{\vc}{\vec{c}}
+\newcommand{\vHext}{\vec{H}_{ext}}
+\newcommand{\vhext}{\vec{h}_{ext}}
+\newcommand{\vM}{\vec{M}}
+\newcommand{\vm}{\vec{m}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vh}{\vec{h}}
+\newcommand{\vg}{\vec{g}}
+\newcommand{\gab}{\gamma_{\alpha \beta}}
+\newcommand{\qab}{q_{\alpha\beta}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Symbols related to micromagnetism
+%%
+\newcommand{\bM}{\mathbf{M}} % vector of spontaneous magnetization
+\newcommand{\bm}{\mathbf{m}} % normalized vector of spontaneous magnetization
+\newcommand{\bp}{\mathbf{p}} % easy axis (direction of preferref magnetization}
+\newcommand{\bu}{\mathbf{u}} % displacement field
+
+\newcommand{\Heff}  {\mathbf{H}_{\text{eff}}}   % effective magnetic field
+\newcommand{\Hext}  {\mathbf{H}_{\text{ext}}}   % external applied field
+\newcommand{\Hdemag}{\mathbf{H}_{\text{demag}}} % demagnetization field
+\newcommand{\Hexch} {\mathbf{H}_{\text{exch}}}  % exchange field
+\newcommand{\Haniso}{\mathbf{H}_{\text{aniso}}} % anisotropy field
+
+\newcommand{\Aexch} {A_{\text{exch}}}   % exchange constant
+\newcommand{\Kaniso}{K_{\text{aniso}}}  % (uniaxial) anisotropy constant
+\newcommand{\aG}    {\alpha_{\text{G}}} % Gilbert damping constant
+
+\newcommand{\eext}  {e_{\text{ext}}}   % Zeeman (external) energy density
+\newcommand{\edemag}{e_{\text{demag}}} % Demagnetization energy density
+\newcommand{\eexch} {e_{\text{exch}}}  % exchange energy density
+\newcommand{\eaniso}{e_{\text{aniso}}} % anisotropy energy density
+\newcommand{\emel}  {e_{\text{m-el}}}  % magneto-elastic energy density
+
+\newcommand{\Eext}  {\calE_{\text{ext}}}   % Zeeman (external) energy
+\newcommand{\Edemag}{\calE_{\text{demag}}} % Demagnetization energy
+\newcommand{\Eexch} {\calE_{\text{exch}}}  % exchange energy
+\newcommand{\Eaniso}{\calE_{\text{aniso}}} % anisotropy energy
+\newcommand{\Emel}  {\calE_{\text{m-el}}}  % magneto-elastic energy
+
+% short text in mathmode
+\newcommand{\rhs}{\text{rhs}}
+\newcommand{\diag}{\text{diag}}

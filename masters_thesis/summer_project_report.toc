@@ -1,0 +1,13 @@
+\contentsline {chapter}{Acknowledgements}{1}
+\contentsline {chapter}{\numberline {1}Synopsis}{2}
+\contentsline {chapter}{\numberline {2}An introduction to Dendritic Solidification}{4}
+\contentsline {chapter}{\numberline {3}The Equations}{5}
+\contentsline {section}{\numberline {3.1}The phasefield equations}{5}
+\contentsline {section}{\numberline {3.2}Incorporating Anisotropy}{6}
+\contentsline {section}{\numberline {3.3}Fluid Flow}{8}
+\contentsline {chapter}{\numberline {4}Implementation and Results}{10}
+\contentsline {section}{\numberline {4.1}One Dimensional Solidification Profile}{10}
+\contentsline {section}{\numberline {4.2}Isotropic Solidification in 2D - only diffusion}{11}
+\contentsline {section}{\numberline {4.3}Dendritic Solidification}{13}
+\contentsline {section}{\numberline {4.4}Simulating fluid flow in closed space}{13}
+\contentsline {chapter}{\numberline {5}Discretisation}{14}
