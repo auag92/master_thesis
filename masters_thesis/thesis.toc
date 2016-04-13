@@ -8,4 +8,6 @@
 \contentsline {chapter}{\numberline {4}The Equations}{10}
 \contentsline {section}{\numberline {4.1}The phasefield equations}{10}
 \contentsline {section}{\numberline {4.2}Incorporating Anisotropy}{11}
-\contentsline {section}{\numberline {4.3}Fluid Flow}{13}
+\contentsline {section}{\numberline {4.3}Incorporating Fluid Flow}{13}
+\contentsline {chapter}{\numberline {5}Direct Numerical Simulation of Navier Stokes Equation}{14}
+\contentsline {chapter}{\numberline {6}Lattice Boltzmann BGK model}{15}

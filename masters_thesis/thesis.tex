@@ -661,7 +661,7 @@ when fully expanded look as follows,
 where, $ a_c = \gamma_o\left(1 - \delta\left(4\left(\dfrac{\phi_x^4+\phi_y^4}{\left(\phi_x^2+\phi_y^2\right)^2}\right)\right)\right)$
 \end{mdframed}
 
-\section{Fluid Flow}
+\section{Incorporating Fluid Flow}
 The evolution equation for $\mu$, derived from mass conservation, includes advection i.e. that is long range 
 mass transport due to fluid currents.
 \begin{align}
@@ -669,27 +669,51 @@ mass transport due to fluid currents.
 	- 6\left(k-1\right)\mu\phi\left(1-\phi\right)\dfrac{\partial\phi}{\partial t}- \vec{v}\cdot\nabla c
 \label{mu_evolution}
 \end{align}
-The time evolution of velocity field incorprated in there needs to be determined using the 
-navier stokes equation for continuity and momentum transport given as follows,
-\begin{align}
-	\nabla\cdot\vec{v} &= 0\\
-	\dfrac{\partial \vec{u}}{\partial t} &= - \nabla P + \nu\nabla^2\left(\vec{u}^2\right) - \vec{u}\cdot\nabla\left(\vec{u}\right)
-\end{align}
+The time evolution of velocity fields incorprated here in needs to be determined using using appropriate solvers for fluid flow. In the following two chapters we shall look at the implementation of: 
+\begin{itemize}
+	\item direct numerical simulation of navier stokes equations,
+	\item lattice Boltzmann algorithm
+\end{itemize}
+to simulate flow and corresponding advection around the evolving solid phase.
 
-The equations needed to be modified to correctly simulate flow around the evolving solid phase, ensuring the no slip condition
-at the solid-liquid interface. We resorted to a description utilised by Steinbach \cite{Stein}, where in the diffuse interface 
-region is viewed as a rigid porous medium. Here, the usual no-slip condition at the sharp solid- 
-liquid interface is enforced through a varying inter facial force term $(1-\phi)$ in the diffuse interface 
-region.
-The mass and momentum conservation equations can then be written, respectively as,
-\begin{align}
-	\nabla\cdot[(1-\phi)\vec{v}] &= 0\\
-	\dfrac{\partial \vec{v}(1-\phi)}{\partial t} &= -(1-\phi)\nabla P + \nu\nabla^2\left(\vec{v}(1-\phi)\right) - \vec{v}\cdot\nabla\left(\vec{v}(1-\phi)\right)
-\end{align}
-The above modification to the Navier Stokes equation was utilised for integrating mass transport in fluid phase into our model.
+\chapter{Direct Numerical Simulation of Navier Stokes Equation}
+	
+	\begin{align}
+		\nabla\cdot\vec{v} &= 0\\
+		\dfrac{\partial \vec{u}}{\partial t} &= - \nabla P + \nu\nabla^2\left(\vec{u}^2\right) - \vec{u}\cdot\nabla\left(\vec{u}\right)
+	\end{align}
+	
+	The equations needed to be modified to correctly simulate flow around the evolving solid phase, ensuring the no slip condition
+	at the solid-liquid interface. We resorted to a description utilised by Steinbach \cite{Stein}, where in the diffuse interface 
+	region is viewed as a rigid porous medium. Here, the usual no-slip condition at the sharp solid- 
+	liquid interface is enforced through a varying inter facial force term $(1-\phi)$ in the diffuse interface 
+	region.
+	The mass and momentum conservation equations can then be written, respectively as,
+	\begin{align}
+		\nabla\cdot[(1-\phi)\vec{v}] &= 0\\
+		\dfrac{\partial \vec{v}(1-\phi)}{\partial t} &= -(1-\phi)\nabla P + \nu\nabla^2\left(\vec{v}(1-\phi)\right) - \vec{v}\cdot\nabla\left(\vec{v}(1-\phi)\right)
+	\end{align}
+	The above modification to the Navier Stokes equation was utilised for integrating mass transport in fluid phase into our model.
 
+\chapter{Lattice Boltzmann BGK model}
+	
+	$
+	\dfrac{\partial f}{\partial t} +\vec{u}\cdot \nabla f = \Omega
+	$\\
+	$
+	\vec{e_{i}} = 
+	\begin{cases}
+		(0,0) & i = 0\\
+		(1,0),(0,1),(-1,0),(0,-1) & i = 1,2,3,4\\
+		(1,1),(-1,1),(-1,-1),(1,-1) & i = 5,6,7,8
+	\end{cases}
+	$
+	\begin{align}
+		\rho(\vec{x},t) &= \sum_{i=0}^{8} f_{i}(\vec{x},t)
+	\end{align}
 
-
+	
+	
 \begin{thebibliography}{1}
 	
   \bibitem{MS_theory} J.S. Langer, in Chance and Matter edited by J. Souletie, J. Vannenimus 
@@ -711,7 +735,13 @@ The above modification to the Navier Stokes equation was utilised for integratin
   
   \bibitem{Boet} W.J. Boettinger el al., Annu. Rev. Mater. Res. 2002. 32:163-94
   
-  \bibitem{lbm_1} 
-
+  \bibitem{l_1} Yuanxun Bill Bao \& Justin Meskas, "Lattice Boltzmann Model for Fluid Simulations", April 14, 2011
+  
+  \bibitem{l_2} Igor Mele, "Lattice Boltzmann method", March 2013 
+  
+  \bibitem{l_3} Zou \& He, "On pressure and velocity boundary conditions for the lattice Boltzmann BGK model", {\em Phys. Fluids}, {\bf 9}(6), June 1997 
+  
+  \bibitem{l_4} Britta Nestler, Ali Aksi, Michael Selzer, "Combined lattice Boltzmann and phase-field simulations for incompressible fluid flow in porous media", {\em Mathematics and Computers in Simulation}, 80(2010) 1458-1468
+	
 \end{thebibliography}
 \end{document}
