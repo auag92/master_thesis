@@ -709,11 +709,37 @@ to simulate flow and corresponding advection around the evolving solid phase.
 	\end{cases}
 	$
 	\begin{align}
-		\rho(\vec{x},t) &= \sum_{i=0}^{8} f_{i}(\vec{x},t)
+		\rho(\vec{x},t) &= \sum_{i=0}^{8} f_{i}(\vec{x},t)\\
+		\rho(\vec{x},t) &= \dfrac{1}{\rho}\sum_{i=0}^{8} cf_{i}(\vec{x},t)\vec{e_i}\\		
+	\end{align}
+	\begin{align}
+		\underbrace{f_i\left(\vec{x} + c\vec{e_i}\Delta t, t+\Delta t\right) - f_i\left(\vec{x}, t\right)}_{\text{Streaming}} &= \underbrace{ -\dfrac{|f_i\left(\vec{x},t\right) - f^{eq}_i\left(\vec{x},t\right)|}{\tau}}_{\text{Collision}}
+	\end{align}
+	\begin{align}
+		f^{eq}_i &= w_i\rho + \rho s_i\\
+		s_i(\vec{u}) &= w_i\left[3\dfrac{\vec{e_i}\cdot \vec{u}}{c} + \frac{9}{2}\dfrac{(\vec{e_i}\cdot \vec{u})^2}{c^2} - \dfrac{3}{2}\dfrac{\vec{u}\cdot\vec{u}}{c^2}\right] 
+	\end{align}
+	\begin{align}
+		\nu &= \dfrac{2\tau - 1}{6}\dfrac{(\Delta x)^2}{\Delta t} 
+	\end{align}
+	\begin{align}
+		w_i = 
+		\begin{cases}
+			4/9  & i = 0\\
+			1/9  & i = 1,2,3,4\\
+			1/36 & i = 5,6,7,8
+		\end{cases}
+	\end{align}
+	\begin{align}
+		\dfrac{\partial f}{\partial t} + \vec{e}\cdot\nabla f &= -\dfrac{1}{\tau}\left(f - f^{eq}\right)
 	\end{align}
 
+	\begin{align}
+		\dfrac{\partial f_k}{\partial t} + \vec{e_k}\cdot\nabla f_k &= -\dfrac{1}{\tau}\left(f_k - f^{eq}_k\right)
+	\end{align}
 	
-	
+	collision step : $\tilde{f_k}\left(\vec{x}_k + \vec{e}_k\Delta t, t+ \Delta t\right) = f_k(\vec{x}_k)$
+		
 \begin{thebibliography}{1}
 	
   \bibitem{MS_theory} J.S. Langer, in Chance and Matter edited by J. Souletie, J. Vannenimus 
