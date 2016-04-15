@@ -702,12 +702,15 @@ to simulate flow and corresponding advection around the evolving solid phase.
 	\end{align}
 	The above modification to the Navier Stokes equation was utilised for integrating mass transport in fluid phase into our model.
 
-\section{Lattice Boltzmann BGK model}
+\section{Lattice Boltzmann-BGK model}
 	
+	Let's analyse the following material derivative. F here refferes to the probability of finding a particle with a given velocity 
+	and given point in space at a particular point of time. 
 	$
 	\dfrac{\partial f}{\partial t} +\vec{u}\cdot \nabla f = \Omega
 	$\\
 	
+	Omega is in general a complicated function. But we look at ...
 	$
 	\vec{e_{i}} = 
 	\begin{cases}
