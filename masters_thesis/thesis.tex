@@ -676,8 +676,15 @@ The time evolution of velocity fields incorprated here in needs to be determined
 \end{itemize}
 to simulate flow and corresponding advection around the evolving solid phase.
 
-\chapter{Direct Numerical Simulation of Navier Stokes Equation}
+\chapter{Models for simulating fluid flow}
 	
+\section{Direct Numerical Simulation of Navier Stokes Equation}
+	\section{Concept of material derivative}
+		Let $\eta$ be a material property. Then the change in $\eta$ as a fluid parcel moves from position $\vec{r}$ to $\vec{r}+\Delta \vec{r}$ over time $\Delta t$ is expressed as;
+		\begin{align}
+			\dfrac{D\eta}{Dt} = \dfrac{\partial \eta}{\partial t} + \vec{u}\cdot\nabla\eta
+		\end{align}
+	wherein $\dfrac{D\eta}{Dt}$ is known as the material derivative or total derivative of the property $\eta$. 
 	\begin{align}
 		\nabla\cdot\vec{v} &= 0\\
 		\dfrac{\partial \vec{u}}{\partial t} &= - \nabla P + \nu\nabla^2\left(\vec{u}^2\right) - \vec{u}\cdot\nabla\left(\vec{u}\right)
@@ -695,11 +702,12 @@ to simulate flow and corresponding advection around the evolving solid phase.
 	\end{align}
 	The above modification to the Navier Stokes equation was utilised for integrating mass transport in fluid phase into our model.
 
-\chapter{Lattice Boltzmann BGK model}
+\section{Lattice Boltzmann BGK model}
 	
 	$
 	\dfrac{\partial f}{\partial t} +\vec{u}\cdot \nabla f = \Omega
 	$\\
+	
 	$
 	\vec{e_{i}} = 
 	\begin{cases}
@@ -739,7 +747,22 @@ to simulate flow and corresponding advection around the evolving solid phase.
 	\end{align}
 	
 	collision step : $\tilde{f_k}\left(\vec{x}_k + \vec{e}_k\Delta t, t+ \Delta t\right) = f_k(\vec{x}_k)$
-		
+	
+	\subsection{Equilibrium distribution function}
+		\begin{align}
+			f &= \dfrac{\rho}{2\pi/3}e^{-\dfrac{3}{2}(\vec{e}-\vec{u})^2} = \dfrac{\rho}{2\pi/3}e^{-\dfrac{3}{2}(\vec{e}\cdot\vec{e})}e^{\dfrac{3}{2}(2\vec{e}\cdot\vec{u} - \vec{u}\cdot\vec{u})}
+		\end{align}
+		\begin{align}
+			f &= \dfrac{\rho}{2\pi/3}e^{-\dfrac{3}{2}(\vec{e}\cdot\vec{e})}\left[1+3\left(\vec{e}\cdot\vec{u}\right) - \dfrac{3}{2}(\vec{u}\cdot\vec{u}) + \dfrac{9}{2}(\vec{e}\cdot\vec{u})^2\right]		
+		\end{align}
+		\begin{align}
+			f^{eq}_k &= \rho\omega_k\left[1+3\left(\vec{e}\cdot\vec{u}\right) - \dfrac{3}{2}(\vec{u}\cdot\vec{u}) + \dfrac{9}{2}(\vec{e}\cdot\vec{u})^2\right]
+		\end{align}
+	
+	\section{Boundary conditions}
+	
+	Boundary conditions are an important part in computational fluid dynamics being central to the stability and accuracy of any numerical solution. 
+	For the lattice Boltzmann method, the discrete distribution functions on the boundary have to be taken care of to reflect the macroscopic BC's of the fluid. Here in, we utilised ...???
 \begin{thebibliography}{1}
 	
   \bibitem{MS_theory} J.S. Langer, in Chance and Matter edited by J. Souletie, J. Vannenimus 

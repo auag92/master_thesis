@@ -9,5 +9,9 @@
 \contentsline {section}{\numberline {4.1}The phasefield equations}{10}
 \contentsline {section}{\numberline {4.2}Incorporating Anisotropy}{11}
 \contentsline {section}{\numberline {4.3}Incorporating Fluid Flow}{13}
-\contentsline {chapter}{\numberline {5}Direct Numerical Simulation of Navier Stokes Equation}{14}
-\contentsline {chapter}{\numberline {6}Lattice Boltzmann BGK model}{15}
+\contentsline {chapter}{\numberline {5}Models for simulating fluid flow}{14}
+\contentsline {section}{\numberline {5.1}Direct Numerical Simulation of Navier Stokes Equation}{14}
+\contentsline {section}{\numberline {5.2}Concept of material derivative}{14}
+\contentsline {section}{\numberline {5.3}Lattice Boltzmann BGK model}{14}
+\contentsline {subsection}{\numberline {5.3.1}Equilibrium distribution function}{15}
+\contentsline {section}{\numberline {5.4}Boundary conditions}{16}
