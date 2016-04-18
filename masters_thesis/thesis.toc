@@ -19,4 +19,10 @@
 \contentsline {subsection}{\numberline {4.2.4}Boundary conditions}{17}
 \contentsline {chapter}{\numberline {5}Validating the phasefield model}{18}
 \contentsline {subsection}{\numberline {5.0.5}Gibb's Thompson Effect}{18}
-\contentsline {subsection}{\numberline {5.0.6}Purtubation Analysis}{20}
+\contentsline {subsection}{\numberline {5.0.6}Purturbation Analysis}{20}
+\contentsline {chapter}{\numberline {6}Results}{21}
+\contentsline {section}{\numberline {6.1}One Dimensional Solidification Profile}{21}
+\contentsline {section}{\numberline {6.2}Anisotropic Solidification in 2D - only diffusion}{22}
+\contentsline {section}{\numberline {6.3}Phasefield - Navier Stokes}{22}
+\contentsline {section}{\numberline {6.4}Phasefield - Lattice Boltzmann}{24}
+\contentsline {chapter}{\numberline {7}Conclusion}{25}

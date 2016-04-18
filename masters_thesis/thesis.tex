@@ -932,8 +932,8 @@ the Navier-Stokes equation for momentum transport.
 	\end{figure}
 	\newpage
 	
-	\subsection{Purtubation Analysis}
-	The mullins-sekerka instability analysis gives a closed form
+	\subsection{Purturbation Analysis}
+	The Mullins-Sekerka instability analysis gives a closed form
 	analytical expression for sinusoidal purtubation of the plane
 	front solution.\\
 	\\
@@ -941,10 +941,202 @@ the Navier-Stokes equation for momentum transport.
 	\begin{align*}
 		\dfrac{\dot{\delta}}{\delta} &= V\tilde{\omega}\left[-\dfrac{b}{G} + \dfrac{1}{\tilde{\omega}}\left(k_{\omega} - \dfrac{V}{D}\right)\right]\\
 		\text{where,  }
-		\tilde{\omega} &= k_{\omega} - \dfrac{V}{D}(1-k)
+		\tilde{\omega} &= k_{\omega} - \dfrac{V}{D}(1-k)\\
+		b &= \dfrac{\Gamma\omega^2}{\mu_{eq}(1-k)}\\
+		\text{and   }
+		k_{\omega} &= \dfrac{V}{2D} + \sqrt{\left(\dfrac{V}{2D}\right)^2 + \omega^2} 
 	\end{align*}
 	Where V is the velocity of the solidification front, D is 
-	the solute diffusivity in the melt phase, 
+	the solute diffusivity in the melt phase, $\Gamma$ is the 
+	Gibbs Thompson coefficient, $\omega$ is the frequency of
+	perturbation, $\delta$ is the amplitude of perturbation
+	and $\dot{\delta}$ is the rate at which the amplitude is 
+	changing.
+	
+	\begin{figure}[!htbp]
+		\centering
+		\subfloat[dispersion plot]{\includegraphics[width=.6\textwidth]{dispersion.pdf}
+		\label{}
+		}
+		\hspace{.25in}
+		\subfloat[sinusoidal $\phi$ front]{\includegraphics[width=.2\textwidth]{disp.png}
+		\label{}
+		}
+	\end{figure}
+	
+\chapter{Results}
+\section{One Dimensional Solidification Profile}
+
+As a first test of the model, we tried to 
+simulate solidification in one dimension for which the 
+evoltuion profiles for state variables are well known. 
+Mass transport is through diffusion only.
+The evolving profiles of the phasefield vatiable, 
+$\phi$, concentration and diffusion potential $\mu$ 
+are depicted in the following images.
+
+\begin{figure}[!htbp]
+\centering
+\subfloat[timestep 0]{\includegraphics[width=.25\textwidth]{phi_0.png}
+\label{timestep 0}}
+\hspace{.25in}
+\subfloat[timestep 50000]{\includegraphics[width=.25\textwidth]{phi_50000.png}
+\label{timestep 50000}
+}
+\hspace{.25in}
+\subfloat[timestep 150000]{\includegraphics[width=.25\textwidth]{phi_150000.png}
+\label{timestep 150000}
+}
+\centering
+\caption{time evolution of the phase field variable $\phi$}
+%\label{micros_3}
+\end{figure}
+ 
+\begin{figure}[!htbp]
+\centering
+\subfloat[timestep 0]{\includegraphics[width=.25\textwidth]{conc_0.png}
+\label{timestep 0}
+}
+\hspace{.25in}
+\subfloat[timestep 50000]{\includegraphics[width=.25\textwidth]{conc_50000.png}
+\label{timestep 50000}
+}
+\hspace{.25in}
+\subfloat[timestep 150000]{\includegraphics[width=.25\textwidth]{conc_150000.png}
+\label{timestep 150000}
+}
+\centering
+\caption{time evolution of concentration}
+%\label{micros_3}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\subfloat[timestep 0]{\includegraphics[width=.25\textwidth]{chem_0.png}
+\label{timestep 0}
+}
+\hspace{.25in}
+\subfloat[timestep 50000]{\includegraphics[width=.25\textwidth]{chem_50000.png}
+\label{timestep 50000}
+}
+\hspace{.25in}
+\subfloat[timestep 150000]{\includegraphics[width=.25\textwidth]{chem_150000.png}
+\label{timestep 150000}
+}
+\centering
+\caption{time evolution of chemical potential $\mu$}
+%\label{micros_3}
+\end{figure}
+\newpage
+
+\section{Anisotropic Solidification in 2D - only diffusion}
+Following images depict the $\phi$ profile during anisotropic 
+solidification at different time steps. 
+\begin{figure}[!h]
+\centering
+\subfloat[timestep 0]{\includegraphics[width=.25\textwidth]{dendrite_0.png}
+\label{timestep 0}
+}
+\hspace{.25in}
+\subfloat[timestep 15000]{\includegraphics[width=.25\textwidth]{dendrite_15000.png}
+\label{timestep 50000}
+}
+\hspace{.25in}
+\subfloat[timestep 30000]{\includegraphics[width=.25\textwidth]{dendrite_30000.png}
+\label{timestep 99000}
+}
+\centering
+\caption{Dendritic solidification on introducing anisotropy}
+%\label{micros_3}
+\end{figure}
+
+\section{Phasefield - Navier Stokes}
+	
+	\subsection*{Poiseuille flow}
+	
+	\begin{figure}[!htbp]
+	\centering
+	\subfloat[timestep 1000]{\includegraphics[width=.25\textwidth]{pflow_1000.png}
+	%\label{timestep 0}
+	}
+	\hspace{.25in}
+	\subfloat[timestep 10000]{\includegraphics[width=.25\textwidth]{pflow_10000.png}
+	%\label{timestep 50000}
+	}
+	\hspace{.25in}
+	\subfloat[timestep 50000]{\includegraphics[width=.25\textwidth]{pflow_50000.png}
+	%\label{timestep 50000}
+	}
+	\centering
+	\caption{Pressure difference between East and West walls}
+	\end{figure}
+	
+	\subsection*{Flow around a solid object in a closed space}
+	
+	\begin{figure}[h]
+	\centering
+	\subfloat[timestep 1000]{\includegraphics[width=.25\textwidth]{object_1000.png}
+	%\label{timestep 0}
+	}
+	\hspace{.25in}
+	\subfloat[timestep 10000]{\includegraphics[width=.25\textwidth]{object_10000.png}
+	%\label{timestep 50000}
+	}
+	\hspace{.25in}
+	\subfloat[timestep 50000]{\includegraphics[width=.25\textwidth]{object_50000.png}
+	%\label{timestep 50000}
+	}
+	\centering
+	\caption{Flow around a solid with a diffuse interface}
+	\end{figure}
+	\newpage
+	\subsection*{Anisotropic growth during fluid flow}
+	Following images depict the evolution of the flow profile 
+	[left to right] and the solid phase over time.
+			\begin{figure}[H]
+				\centering
+				\subfloat[timestep 20000]{\includegraphics[width=.3\textwidth]{20k.png}
+				}
+				\hspace{.25in}
+				\subfloat[timestep 65000]{\includegraphics[width=.3\textwidth]{65k.png}
+				}
+				\centering
+				\caption{Forced Covection; left to right around evolving solid phase}
+			\end{figure}
+			\begin{figure}[!h]
+				\centering
+				\subfloat[timestep 20000]{\includegraphics[width=.3\textwidth]{phi_20k.png}}
+				\hspace{.25in}
+				\subfloat[timestep 65000]{\includegraphics[width=.3\textwidth]{phi_65k.png}}
+				\centering
+				\caption{Evolving solid phase}
+			\end{figure}
+\newpage
+\section{Phasefield - Lattice Boltzmann}
+Having incorporated the lattice-Boltzmann based flow solver described earlier into
+our phasefield solver for solidification, we validated the solver by simulating 
+the lid driven cavity flow and got expected results as seen in figure a.\\
+\\
+Thereafter, we simulated anisotropic growth in presence of forced pipe flow 
+[left to right] resulting in $\mu$ profiles as seen in figure b and figure c. 
+					\begin{figure}[H]
+						\centering
+						\subfloat[lid driven cavity]{\includegraphics[width=.3\textwidth]{lbm_100_11k.jpg}
+						\label{lid driven cavity}
+						}
+						\hspace{.3in}
+						\subfloat[mu field]{\includegraphics[width=.3\textwidth]{mu_3k.png}
+						\label{}
+						}
+						\hspace{.3in}
+						\subfloat[mu field]{\includegraphics[width=.3\textwidth]{mu_3k_3d.png}
+						\label{}
+						}
+						\centering
+						\caption{Examples of flow profiles generated using lbm}
+						%\label{micros_3}
+					\end{figure}
+
 \begin{thebibliography}{1}
 	
   \bibitem{MS_theory} J.S. Langer, in Chance and Matter edited by J. Souletie, J. Vannenimus 
