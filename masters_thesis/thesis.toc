@@ -5,13 +5,18 @@
 \contentsline {section}{\numberline {3.1}The Phase Field Method}{5}
 \contentsline {section}{\numberline {3.2}The Allen-Cahn Equation}{5}
 \contentsline {section}{\numberline {3.3}Modelling Alloy Solidification}{7}
-\contentsline {chapter}{\numberline {4}The Equations}{10}
-\contentsline {section}{\numberline {4.1}The phasefield equations}{10}
-\contentsline {section}{\numberline {4.2}Incorporating Anisotropy}{11}
-\contentsline {section}{\numberline {4.3}Incorporating Fluid Flow}{13}
-\contentsline {chapter}{\numberline {5}Models for simulating fluid flow}{14}
-\contentsline {section}{\numberline {5.1}Direct Numerical Simulation of Navier Stokes Equation}{14}
-\contentsline {section}{\numberline {5.2}Concept of material derivative}{14}
-\contentsline {section}{\numberline {5.3}Lattice Boltzmann BGK model}{14}
-\contentsline {subsection}{\numberline {5.3.1}Equilibrium distribution function}{15}
-\contentsline {section}{\numberline {5.4}Boundary conditions}{16}
+\contentsline {section}{\numberline {3.4}The phasefield Equations}{9}
+\contentsline {section}{\numberline {3.5}Incorporating Anisotropy}{10}
+\contentsline {section}{\numberline {3.6}Concept of material derivative}{12}
+\contentsline {section}{\numberline {3.7}Incorporating Fluid Flow}{12}
+\contentsline {chapter}{\numberline {4}Models for simulating fluid flow}{14}
+\contentsline {section}{\numberline {4.1}Navier Stokes equation for incompressible flow in newtonian fluid}{14}
+\contentsline {subsection}{\numberline {4.1.1}Finite Difference - 2 D - Implementation}{15}
+\contentsline {section}{\numberline {4.2}Lattice Boltzmann-BGK model}{15}
+\contentsline {subsection}{\numberline {4.2.1}Descretised Representation}{16}
+\contentsline {subsection}{\numberline {4.2.2}Equilibrium distribution function}{16}
+\contentsline {subsection}{\numberline {4.2.3}Macroscopic Quantities}{17}
+\contentsline {subsection}{\numberline {4.2.4}Boundary conditions}{17}
+\contentsline {chapter}{\numberline {5}Validating the phasefield model}{18}
+\contentsline {subsection}{\numberline {5.0.5}Gibb's Thompson Effect}{18}
+\contentsline {subsection}{\numberline {5.0.6}Purtubation Analysis}{20}

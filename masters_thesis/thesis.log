@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.19)  15 APR 2016 02:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.19)  18 APR 2016 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1199,7 +1199,40 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 LaTeX Warning: Label `Mass-conservation-alloys' multiply defined.
 
 
-LaTeX Warning: Label `mu_evolution' multiply defined.
+LaTeX Warning: Label `timestep 0' multiply defined.
+
+
+LaTeX Warning: Label `sub@timestep 0' multiply defined.
+
+
+LaTeX Warning: Label `timestep 50000' multiply defined.
+
+
+LaTeX Warning: Label `sub@timestep 50000' multiply defined.
+
+
+LaTeX Warning: Label `timestep 99000' multiply defined.
+
+
+LaTeX Warning: Label `sub@timestep 99000' multiply defined.
+
+
+LaTeX Warning: Label `timestep 0' multiply defined.
+
+
+LaTeX Warning: Label `sub@timestep 0' multiply defined.
+
+
+LaTeX Warning: Label `timestep 50000' multiply defined.
+
+
+LaTeX Warning: Label `sub@timestep 50000' multiply defined.
+
+
+LaTeX Warning: Label `timestep 99000' multiply defined.
+
+
+LaTeX Warning: Label `sub@timestep 99000' multiply defined.
 
 )
 \openout1 = `thesis.aux'.
@@ -1298,71 +1331,71 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
+Underfull \hbox (badness 10000) in paragraph at lines 86--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
+Underfull \hbox (badness 10000) in paragraph at lines 86--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
+Underfull \hbox (badness 10000) in paragraph at lines 86--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
+Underfull \hbox (badness 10000) in paragraph at lines 86--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
+Underfull \hbox (badness 10000) in paragraph at lines 86--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
+Underfull \hbox (badness 10000) in paragraph at lines 86--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--138
+Underfull \hbox (badness 10000) in paragraph at lines 86--147
 
  []
 
 [2
 
-] [3]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
+
+ []
+
+[3]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--173
+Underfull \hbox (badness 10000) in paragraph at lines 155--197
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--173
+Underfull \hbox (badness 10000) in paragraph at lines 155--197
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--173
+Underfull \hbox (badness 10000) in paragraph at lines 155--197
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--173
+Underfull \hbox (badness 10000) in paragraph at lines 155--197
 
  []
 
@@ -1371,195 +1404,334 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--173
 ]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 203--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 203--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 203--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--222
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
 
  []
 
 [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
+Underfull \hbox (badness 10000) in paragraph at lines 259--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--276
+Underfull \hbox (badness 10000) in paragraph at lines 284--399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--399
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 383--388
+Underfull \hbox (badness 10000) in paragraph at lines 400--406
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--396
-
- []
-
-[7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 469--472
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 446--458
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--472
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 463--470
 
  []
 
 [9]
-Chapter 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 510--512
-
- []
-
-[10
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 567--573
+Underfull \hbox (badness 10000) in paragraph at lines 544--549
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 567--573
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 567--573
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
+Underfull \hbox (badness 10000) in paragraph at lines 551--604
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 574--633
-
- []
-
-[11] [12]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 674.
+[10] [11] [12]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 651.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 674.
- [13]
-Chapter 5.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 651.
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--710
+[13]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 679--684
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--705
 
  []
 
 [14
 
-] [15] [16] [17
+]
+
+LaTeX Warning: Citation `BGK' on page 15 undefined on input line 735.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--758
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--758
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 759--771
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--804
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 835--847
+
+ []
+
+[17]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 853--855
+
+ []
+
+<images/gt_0.png, id=76, 600.2425pt x 474.77374pt>
+File: images/gt_0.png Graphic file (type png)
+ <use images/gt_0.png>
+Package pdftex.def Info: images/gt_0.png used on input line 884.
+(pdftex.def)             Requested size: 113.24197pt x 89.57043pt.
+
+<images/gt_50.png, id=77, 609.27625pt x 521.95pt>
+File: images/gt_50.png Graphic file (type png)
+ <use images/gt_50.png>
+Package pdftex.def Info: images/gt_50.png used on input line 888.
+(pdftex.def)             Requested size: 113.24197pt x 97.00523pt.
+
+<images/gt_99.png, id=78, 580.1675pt x 473.77pt>
+File: images/gt_99.png Graphic file (type png)
+ <use images/gt_99.png>
+Package pdftex.def Info: images/gt_99.png used on input line 892.
+(pdftex.def)             Requested size: 113.24197pt x 92.46791pt.
+
+<images/shrink_0.png, id=79, 582.175pt x 444.66125pt>
+File: images/shrink_0.png Graphic file (type png)
+
+<use images/shrink_0.png>
+Package pdftex.def Info: images/shrink_0.png used on input line 902.
+(pdftex.def)             Requested size: 113.24197pt x 86.48808pt.
+
+<images/shrink_50.png, id=80, 614.295pt x 431.6125pt>
+File: images/shrink_50.png Graphic file (type png)
+
+<use images/shrink_50.png>
+Package pdftex.def Info: images/shrink_50.png used on input line 906.
+(pdftex.def)             Requested size: 113.24197pt x 79.56386pt.
+
+<images/shrink_99.png, id=81, 589.20125pt x 450.68375pt>
+File: images/shrink_99.png Graphic file (type png)
+
+<use images/shrink_99.png>
+Package pdftex.def Info: images/shrink_99.png used on input line 910.
+(pdftex.def)             Requested size: 113.24197pt x 86.61418pt.
+File: images/gt_0.png Graphic file (type png)
+ <use images/gt_0.png>
+Package pdftex.def Info: images/gt_0.png used on input line 920.
+(pdftex.def)             Requested size: 113.24197pt x 89.57043pt.
+File: images/gt_50.png Graphic file (type png)
+ <use images/gt_50.png>
+Package pdftex.def Info: images/gt_50.png used on input line 924.
+(pdftex.def)             Requested size: 113.24197pt x 97.00523pt.
+
+<images/grow_99.png, id=82, 641.39626pt x 450.68375pt>
+File: images/grow_99.png Graphic file (type png)
+
+<use images/grow_99.png>
+Package pdftex.def Info: images/grow_99.png used on input line 928.
+(pdftex.def)             Requested size: 113.24197pt x 79.5654pt.
+ [18
+
+] [19 <./images/gt_0.png> <./images/gt_50.png> <./images/gt_99.png> <./images/s
+hrink_0.png> <./images/shrink_50.png> <./images/shrink_99.png> <./images/grow_9
+9.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 936--941
+
+ []
+
+[20] [21
 
 ] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28513 strings out of 494985
- 634403 string characters out of 6180356
- 832907 words of memory out of 5000000
- 31163 multiletter control sequences out of 15000+600000
- 11422 words of font info for 42 fonts, out of 8000000 for 9000
+ 28572 strings out of 494985
+ 635398 string characters out of 6180356
+ 835019 words of memory out of 5000000
+ 31211 multiletter control sequences out of 15000+600000
+ 12043 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,19n,75p,10446b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,19n,75p,10446b,956s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (18 pages, 210562 bytes).
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on thesis.pdf (22 pages, 374678 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

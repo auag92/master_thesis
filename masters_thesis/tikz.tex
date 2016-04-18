@@ -1,0 +1,213 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{amsmath}
+\begin{document}
+\noindent \emph{Objective}:
+To transform the frame of reference to normal and tangential coordinates in the diffuse interface region of a 2D circular precipitate.\\
+\noindent Why we need to transform?
+\begin{center}
+ $\frac{\partial\sigma}{\partial r}=0$\\
+ $\rho\frac{\partial^2 u_i}{\partial t^2}+b\frac{\partial u_i}{\partial t}=\frac{\partial\sigma_{ij}}{\partial x_j}$
+\end{center}
+The second equation is solved by:
+\begin{center}
+\begin{tikzpicture}
+ \draw[black] (0,0) circle (2pt)
+ node[below] {$u_{i}^{t}$};
+ \filldraw[black] (2,0) circle (2pt)
+ node[below] {$u_{i}^{t+1}$};
+ \filldraw[black] (-2,0) circle (2pt)
+ node[below] {$u_{i}^{t-1}$};
+ \draw[black,<-] (0,0.2) -- (0,1)
+ node[above] {$\rho\frac{\partial^{2} u}{\partial t^2}=\frac{u_{i}^{t+1} -2u_{i}^{t}+u_{i}^{t-1}}{ dt*dt}$};
+
+ \draw[red] (6,0) circle (2pt)
+ node[above] {$u_{i}^{t}$};
+ \filldraw[red] (4,0) circle (2pt)
+ node[above] {$u_{i}^{t-1}$};
+ \filldraw[red] (8,0) circle (2pt)
+ node[above] {$u_{i}^{t+1}$};
+ \draw[red,<-] (6,0) -- (6,-1)
+ node[below]{$b\frac{\partial u_i}{\partial t}=\frac{u_i^{t+1}-u_i^{t-1}}{2dt}$};
+ 
+ \draw[green] (0,-5) circle (2pt)
+ node[above] {$\sigma_{xx}^{i,j}$};
+ \filldraw[green] (2,-5) circle (2pt)
+ node[below] {$\sigma_{xx}^{i+1,j}$};
+ \filldraw[green] (-2,-5) circle (2pt)
+ node[below] {$\sigma_{xx}^{i-1,j}$};
+ \draw[red,<-] (0,-5) -- (0,-6)
+  node[below]{$\frac{\partial \sigma_{xx}}{\partial x}=\frac{\sigma_{xx}^{i+1,j}-\sigma_{xx}^{i-1,j}}{2dx}$};
+  
+  \draw[green] (6,-5) circle (2pt)
+ node[left] {$\sigma_{yy}^{i,j}$};
+ \filldraw[green] (6,-7) circle (2pt)
+ node[left] {$\sigma_{yy}^{i,j+1}$};
+ \filldraw[green] (6,-3) circle (2pt)
+ node[left] {$\sigma_{yy}^{i,j-1}$};
+ \draw[red,<-] (6,-5) -- (7,-5)
+  node[right]{$\frac{\partial \sigma_{yy}}{\partial y}=\frac{\sigma_{yy}^{i,j+1}-\sigma_{yy}^{i,j-1}}{2dy}$};
+  
+ \draw[black] (0,-10) circle (2pt)
+ node[above] {$\sigma_{xy}^{i,j}$};
+ \filldraw[black] (2,-10) circle (2pt)
+ node[below] {$\sigma_{xy}^{i+1,j}$};
+ \filldraw[black] (-2,-10) circle (2pt)
+ node[below] {$\sigma_{xy}^{i-1,j}$};
+ \draw[red,<-] (0,-10) -- (0,-11)
+  node[below]{$\frac{\partial \sigma_{xy}}{\partial x}=\frac{\sigma_{xy}^{i+1,j}-\sigma_{xy}^{i-1,j}}{2dx}$}; 
+  
+\draw[black] (6,-10) circle (2pt)
+ node[left] {$\sigma_{yy}^{i,j}$};
+ \filldraw[black] (6,-12) circle (2pt)
+ node[left] {$\sigma_{yy}^{i,j+1}$};
+ \filldraw[black] (6,-8) circle (2pt)
+ node[left] {$\sigma_{yy}^{i,j-1}$};
+ \draw[red,<-] (6,-10) -- (7,-10)
+  node[right]{$\frac{\partial \sigma_{xy}}{\partial y}=\frac{\sigma_{xy}^{i,j+1}-\sigma_{xy}^{i,j-1}}{2dy}$};  
+ 
+\end{tikzpicture}
+\end{center}
+solved using 
+In the previous report of plane interface inverse plottation modelwe have observed that in order to have a continous stress and strain profile in the system we require the coordinates be in normal and tangential axes,calculation of $C_{ijkl}$ in the diffuse interface by inverse interplotation.\\
+\noindent \emph{Formulation}:\\
+ 
+\noindent finding normal vector:\\ 
+normal vector\\
+\begin{equation}
+ n=-\frac{\nabla\phi}{|\nabla\phi|}
+\end{equation}
+\begin{equation}
+\nabla\phi_{x}=-\frac{\phi(x+1)-\phi(x-1)}{2dx}
+\end{equation}
+\begin{equation}
+\nabla\phi_{y}=-\frac{\phi(y+1)-\phi(y-1)}{2dy}
+\end{equation}
+\begin{equation}
+n_{x,y}=\frac{\nabla\phi_{x,y}}{\sqrt{\nabla\phi_{x}^2+\nabla\phi_{y}^2}}
+\end{equation}
+\begin{center}
+\begin{tikzpicture}
+ \draw[black] (0,0) circle (2pt)
+ node[below] {i,j};
+ \filldraw[black] (2,0) circle (2pt)
+ node[below] {i+1,j};
+ \filldraw[black] (-2,0) circle (2pt)
+ node[below] {i-1,j};
+ \draw[black,<-] (0,0.2) -- (0,1)
+ node[above] {$\frac{\phi_{i+1,j} - \phi_{i-1,j}}{2 dx}$};
+ 
+ \filldraw[white] (4,0) circle (2pt)
+ node[black] {and};
+%  node[black,below=3cm] {\textbf{Fig: 12} Discretization to calculate $\nabla \phi_x$ and $\nabla \phi_y$ using central difference method.} ;
+ 
+ \draw[black] (6,0) circle (2pt)
+ node[below] {i,j};
+ \filldraw[black] (6,2) circle (2pt)
+ node[below] {i,j+1};
+ \filldraw[black] (6,-2) circle (2pt)
+ node[below] {i,j-1};
+ \draw[black,<-] (6.2,0) -- (7,0)
+ node[right] {$\frac{\phi_{i,j+1} - \phi_{i,j-1}}{2 dy} $};
+\end{tikzpicture}
+\end{center}
+\emph{Discretization}:Central difference is used.\\
+I have stored the index of the points where atleast one of $n_{x},n_{y}$ vector is non-zero in a file named \emph{domain-transform.txt}.\\
+Rotation matrix of transformation:\\
+A 2D array a[2][2] is used to store rotation transformation matrix and it is written at each index of domain in a file called rotation-matrix.txt\\
+Notation used:\\
+   $
+   a[0][0]=a_{nx}=n_x \\
+   a[0][1]=a_{ny}=n_y  \\
+   a[1][0]=a_{tx}=-n_y  \\
+   a[1][1]=a_{ty}=n_x    \\
+   $
+$C_{ijkl}$ transformation to $C_{ntrs}$:\\
+1.Notation:
+In $C_{ijkl}$ i,j,k,l takes  x,y.The reduced form of $C_{ijkl}$ due to symmetry operation is\\
+\[
+\begin{bmatrix}
+\$C_{11} & C_{12} & C_{16} \\
+  C_{21} & C_{22} & C_{26} \\
+  C_{61} & C_{62} & C_{66} \$ \\  
+\end{bmatrix}
+=
+\begin{bmatrix}
+   C_{xxxx} & C_{xxyy} & C_{xxxy} \\
+   C_{yyxx} & C_{yyyy} & C_{yyxy}   \\
+   C_{xyxx} & C_{xyyy} & C_{xyxy}  \\  
+\end{bmatrix} 
+\]
+only six independent components of $C_{ntrs}$ at each index of domain is stored in a file.
+
+2.$C_{ntrs}^{\alpha,\beta}$ at each index of the domain is obtained from $C_{ijkl}^{\alpha,\beta}$ and stored in files respectively. 
+  $C_{ntrs}^{\alpha,\beta}=a_{ni}a_{tj}a_{rk}a_{sl}C_{ijkl}^{\alpha,\beta}$\\
+  
+ Stress and strains in the domain calculations:
+\noindent Let $\sigma_{nn},\sigma_{nt},\sigma_{tt},\epsilon_{nn},\epsilon_{nt},\epsilon_{tt}$ be the total stress and strain components in the domain region.Let $\epsilon_{nn}^{\alpha,\beta},\epsilon_{nt}^{\alpha,\beta}$ be the strain of the corresponding components $\alpha,\beta$ in the diffuse interface region.\\
+
+First strains in the difffuse interface regio has been transformed into normal coordinates as follows.\\
+ $\epsilon_{nt}=a_{ni}a_{tj}\epsilon_{ij}$ 
+ 
+
+ \begin{equation}
+  S_{nt}^{\alpha,\beta}=
+  \begin{bmatrix}
+      C_{nnnn}^{\alpha,\beta} & 2C_{nnnt}^{\alpha,\beta} \\
+      C_{ntnn}^{\alpha,\beta} & 2C_{ntnt}^{\alpha,\beta} \\
+  \end{bmatrix}^{-1}      
+ \end{equation}
+ 
+ Let 
+\begin{equation}
+\begin{bmatrix}
+\sigma_{nn}\\
+\sigma_{nt}\\
+\end{bmatrix}
+=\left(S_{nt}^{\alpha}\phi+S_{nt}^{\beta}\left(1-\phi\right)\right)^{-1}\left(
+\begin{bmatrix}
+  \epsilon_{nn}\\
+  \epsilon_{nt}\\
+\end{bmatrix}
++
+S_{nt}^{\alpha}
+\begin{bmatrix}
+C_{nntt}^{\alpha}\epsilon_{tt}\\
+C_{nttt}^{\alpha}\epsilon_{tt}\\
+\end{bmatrix}
+\phi
++
+S_{nt}^{\beta}
+\begin{bmatrix}
+C_{nntt}^{\beta}\epsilon_{tt}\\
+C_{nnnt}^{\beta}\epsilon_{tt}\\
+\end{bmatrix}
+(1-\phi)
+\right)
+\end{equation}
+
+\begin{equation}
+\begin{bmatrix}
+\epsilon_{nn}^{\alpha,\beta} \\
+\epsilon_{nt}^{\alpha,\beta} \\
+\end{bmatrix}
+=
+S_{nt}^{\alpha,\beta}
+\begin{bmatrix}
+\sigma_{nn}-C_{nntt}^{\alpha,\beta}\epsilon_{tt}\\
+\sigma_{nt}-C_{nttt}^{\alpha,\beta}\epsilon_{tt}\\
+\end{bmatrix}
+\end{equation}
+This is used to calculate $\sigma_{tt}$ as follows:
+ \begin{equation}
+  \sigma_{tt}=\sigma_{tt}^{\alpha}\phi+\sigma_{tt}^{\beta}(1-\phi)\\
+  \end{equation}
+$\sigma_{tt}^{\alpha,\beta}=C_{ttnn}^{\alpha,\beta}\epsilon_{nn}^{\alpha,\beta}+2C_{ttnt}^{\alpha,\beta}\epsilon_{nt}^{\alpha,\beta}+C_{tttt}^{\alpha,\beta}\epsilon_{tt}$
+
+\end{document}
