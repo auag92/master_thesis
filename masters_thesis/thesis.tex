@@ -656,7 +656,7 @@ to simulate flow and corresponding advection around the evolving solid phase.
 \chapter{Models for simulating fluid flow}
 
 \section{Navier Stokes equation for incompressible flow in newtonian fluid}
-Equation of continuity (zero generation) is given as,
+The continuity of mass equation is given as,
 		\begin{align}
 			\dfrac{\partial\rho}{\partial t} + \vec{\nabla}\cdot(\rho\vec{u}) &= 0
 			\label{ns_1}
@@ -690,17 +690,14 @@ The continuity and momentum transport equations can then be written, respectivel
 
 \subsection{Finite Difference - 2 D - Implementation}
 We can rewrite the time evolution equation for 
-velocity in descretised form as;
+velocity in discretized form as;
 \begin{align}
 	\dfrac{\vec{u_{t+dt}} - \vec{u_t}}{\Delta t} = -(1-\phi)\nabla P + \dfrac{1}{Re}\nabla^2\left(\vec{u}(1-\phi)\right) - \vec{u}\cdot\nabla\left(\vec{u}(1-\phi)\right) 
 \end{align}
+\begin{center}
 Define : $\vec{H} = \dfrac{1}{Re}\nabla^2\left(\vec{u}(1-\phi)\right) - \vec{u}\cdot\nabla\left(\vec{u}(1-\phi)\right)$\\
-\\
-Then,
-$
-	\dfrac{\vec{u_{t+dt}} - \vec{u_t}}{\Delta t} = -(1-\phi)\nabla P + \vec{H}
-$\\
-\\
+Then, $	\dfrac{\vec{u_{t+dt}} - \vec{u_t}}{\Delta t} = -(1-\phi)\nabla P + \vec{H} $
+\end{center}
 Taking divergence on both sides, we have;
 \begin{align}
 	\dfrac{\nabla\cdot\vec{u_{t+dt}} - \nabla\cdot\vec{u_t}}{\Delta t} = -\nabla\cdot\left[(1-\phi)\nabla P\right] + \nabla\cdot\vec{H}	
@@ -745,9 +742,9 @@ the Navier-Stokes equation for momentum transport.
 	$\\
 	\\
 			
-	\subsection{Descretised Representation}
+	\subsection{Discretised Representation}
 	For a two dimensional representation over a square grid, 
-	the probability distribution function is descretised in the 
+	the probability distribution function is discretised in the 
 	following manner.\\ 
 	\\
 	Particles are restricted to stream in eight possible
@@ -772,7 +769,7 @@ the Navier-Stokes equation for momentum transport.
 		\dfrac{\partial f_k}{\partial t} +\vec{e_k}\cdot \nabla f &= -\dfrac{1}{\tau}\left(f_k - f^{eq}\right)
 	\end{align}
 	Given time step $\Delta t$ and space step $\Delta x_k$, the above 
-	equation can be rewritten in descretised form as;
+	equation can be rewritten in discretized form as;
 
 	\begin{align}
 		\underbrace{f_i\left(\vec{x} + c\vec{e_i}\Delta t, t+\Delta t\right) - f_i\left(\vec{x}, t\right)}_{\text{Streaming}} &= \underbrace{ -\dfrac{|f_i\left(\vec{x},t\right) - f^{eq}_i\left(\vec{x},t\right)|}{\tau}}_{\text{Collision}}

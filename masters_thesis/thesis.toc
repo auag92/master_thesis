@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {4.1}Navier Stokes equation for incompressible flow in newtonian fluid}{14}
 \contentsline {subsection}{\numberline {4.1.1}Finite Difference - 2 D - Implementation}{15}
 \contentsline {section}{\numberline {4.2}Lattice Boltzmann-BGK model}{15}
-\contentsline {subsection}{\numberline {4.2.1}Descretised Representation}{16}
+\contentsline {subsection}{\numberline {4.2.1}Discretised Representation}{16}
 \contentsline {subsection}{\numberline {4.2.2}Equilibrium distribution function}{16}
 \contentsline {subsection}{\numberline {4.2.3}Macroscopic Quantities}{17}
 \contentsline {subsection}{\numberline {4.2.4}Boundary conditions}{17}
@@ -25,4 +25,3 @@
 \contentsline {section}{\numberline {6.2}Anisotropic Solidification in 2D - only diffusion}{22}
 \contentsline {section}{\numberline {6.3}Phasefield - Navier Stokes}{22}
 \contentsline {section}{\numberline {6.4}Phasefield - Lattice Boltzmann}{24}
-\contentsline {chapter}{\numberline {7}Conclusion}{25}
